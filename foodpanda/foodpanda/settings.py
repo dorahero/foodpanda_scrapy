@@ -73,7 +73,7 @@ CONCURRENT_REQUESTS = 1024
 #    'foodpanda.middlewares.FoodpandaDownloaderMiddleware': 543,
 #}
 from foodpanda.utils import ScyllaProxies, MongoProxies
-ROTATING_PROXY_LIST = ScyllaProxies(999).to_list()
+ROTATING_PROXY_LIST = MongoProxies("proxy_checked").get_all_proxies()
 DOWNLOADER_MIDDLEWARES = {
     'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
     'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
