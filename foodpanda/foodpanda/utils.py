@@ -34,7 +34,7 @@ class ScyllaProxies(object):
         uri="https" if proxy_dict.get("is_https") else "http"
         return f"{uri}://{ip}:{port}/"
 
-MONGODB_HOST="172.16.16.139"
+MONGODB_HOST="mongo"
 MONGODB_PORT=27017
 MONGODB_USERNAME="root"
 MONGODB_PASSWORD="2020aiot"

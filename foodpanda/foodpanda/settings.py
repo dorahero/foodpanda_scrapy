@@ -6,25 +6,25 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-import logging
-from logging.handlers import RotatingFileHandler
+# import logging
+# from logging.handlers import RotatingFileHandler
 
-from scrapy.utils.log import configure_logging
+# from scrapy.utils.log import configure_logging
 
-LOG_ENABLED = False
-# Disable default Scrapy log settings.
-configure_logging(install_root_handler=False)
+# LOG_ENABLED = False
+# # Disable default Scrapy log settings.
+# configure_logging(install_root_handler=False)
 
-# Define your logging settings.
-log_file = 'CRAWLER_logs.log'
+# # Define your logging settings.
+# log_file = 'CRAWLER_logs.log'
 
-root_logger = logging.getLogger()
-root_logger.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-rotating_file_log = RotatingFileHandler(log_file, maxBytes=10485760, backupCount=1)
-rotating_file_log.setLevel(logging.ERROR)
-rotating_file_log.setFormatter(formatter)
-root_logger.addHandler(rotating_file_log)
+# root_logger = logging.getLogger()
+# root_logger.setLevel(logging.INFO)
+# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# rotating_file_log = RotatingFileHandler(log_file, maxBytes=10485760, backupCount=1)
+# rotating_file_log.setLevel(logging.ERROR)
+# rotating_file_log.setFormatter(formatter)
+# root_logger.addHandler(rotating_file_log)
 BOT_NAME = 'foodpanda'
 
 SPIDER_MODULES = ['foodpanda.spiders']
@@ -92,7 +92,7 @@ DOWNLOADER_MIDDLEWARES = {
 ITEM_PIPELINES = {
    'foodpanda.pipelines.FoodpandaPipeline': 300,
 }
-MONGO_URI="mongodb://root:2020aiot@172.16.16.139:27017/"
+MONGO_URI="mongodb://root:2020aiot@mongo:27017/"
 MONGO_DATABASE="foodpanda"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
